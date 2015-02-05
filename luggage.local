@@ -24,7 +24,7 @@ l_usr_local_munki_preflight_abort.d: l_usr_local_munki
 	@sudo chown -R root:wheel ${WORK_D}/usr/local/munki/preflight_abort.d
 	@sudo chmod -R 755 ${WORK_D}/usr/local/munki/preflight_abort.d
 
-pack-usr-local-munki-preflight_abort.d-%: % l_usr_local_munki
+pack-usr-local-munki-preflight_abort.d-%: % l_usr_local_munki_preflight_abort.d
 	@sudo ${INSTALL} -m 755 -g wheel -o root "${<}" ${WORK_D}/usr/local/munki/preflight_abort.d
 
 
