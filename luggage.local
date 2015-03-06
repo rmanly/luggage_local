@@ -12,6 +12,15 @@ l_Library_Glenbrook225_duti: l_Library_Glenbrook225
 pack-Library-Glenbrook225-duti-%: % l_Library_Glenbrook225_duti
 	@sudo ${INSTALL} -m 755 -g wheel -o root "${<}" ${WORK_D}/Library/Glenbrook225/duti
 
+# custom munki conditional script location
+l_usr_local_munki_conditions: l_usr_local_munki
+	@sudo mkdir -p ${WORK_D}/usr/local/munki/conditions
+	@sudo chown -R root:wheel ${WORK_D}/usr/local/munki/conditions
+	@sudo chmod -R 755 ${WORK_D}/usr/local/munki/conditions
+
+pack-usr-local-munki-conditions-%: % l_usr_local_munki_conditions
+	@sudo ${INSTALL} -m 755 -g wheel -o root "${<}" ${WORK_D}/usr/local/munki/conditions
+
 # munkireport-php preflight_abort
 l_usr_local_munki: l_usr_local
 	@sudo mkdir -p ${WORK_D}/usr/local/munki
