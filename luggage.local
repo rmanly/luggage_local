@@ -1,12 +1,12 @@
 # My special nonsense
 l_Library_ColorSync: l_Library
 	@sudo mkdir -p ${WORK_D}/Library/ColorSync
-	@sudo chown root:wheel${WORK_D}/Library/ColorSync
+	@sudo chown root:wheel ${WORK_D}/Library/ColorSync
 	@sudo chmod 755 ${WORK_D}/Library/ColorSync
 
 l_Library_ColorSync_Profiles: l_Library_ColorSync
 	@sudo mkdir -p ${WORK_D}/Library/ColorSync/Profiles
-	@sudo chown root:wheel${WORK_D}/Library/ColorSync/Profiles
+	@sudo chown root:wheel ${WORK_D}/Library/ColorSync/Profiles
 	@sudo chmod 755 ${WORK_D}/Library/ColorSync/Profiles
 
 pack-Library-ColorSync-Profiles-%: % l_Library_ColorSync_Profiles
