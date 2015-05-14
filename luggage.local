@@ -9,6 +9,14 @@ l_Library_Glenbrook225_duti: l_Library_Glenbrook225
 	@sudo chown -R root:wheel ${WORK_D}/Library/Glenbrook225/duti
 	@sudo chmod -R 755 ${WORK_D}/Library/Glenbrook225/duti
 
+l_Library_Glenbrook225_scripts: l_Library_Glenbrook225
+	@sudo mkdir -p ${WORK_D}/Library/Glenbrook225/scripts
+	@sudo chown -R root:wheel ${WORK_D}/Library/Glenbrook225/scripts
+	@sudo chmod -R 755 ${WORK_D}/Library/Glenbrook225/scripts
+
+pack-Library-Glenbrook225-scripts-%: % l_Library_Glenbrook225_scripts
+	@sudo ${INSTALL} -m 755 -g wheel -o root "${<}" ${WORK_D}/Library/Glenbrook225/scripts
+
 pack-Library-Glenbrook225-duti-%: % l_Library_Glenbrook225_duti
 	@sudo ${INSTALL} -m 755 -g wheel -o root "${<}" ${WORK_D}/Library/Glenbrook225/duti
 
